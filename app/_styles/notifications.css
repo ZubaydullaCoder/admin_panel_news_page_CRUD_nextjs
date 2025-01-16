@@ -1,0 +1,32 @@
+.Toastify__toast {
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.Toastify__toast--success {
+    background: #00863e;
+}
+
+.Toastify__toast--error {
+    background: #e74c3c;
+}
+
+.Toastify__toast--info {
+    background: #3498db;
+}
+
+.Toastify__toast--warning {
+    background: #f1c40f;
+}
+
+.Toastify__progress-bar {
+    height: 3px;
+}
+
+.Toastify__close-button {
+    opacity: 0.7;
+}
+
+.Toastify__close-button:hover {
+    opacity: 1;
+}

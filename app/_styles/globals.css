@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('../../public/fonts/fonts.css');
+
+body {
+  font-family: 'Mulish', sans-serif;
+}
+
+
+.lh {
+  line-height: normal;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-border {
+  border-style: dashed;
+  border-width: 3px;
+  border-color: #00863E;
+  border-radius: 5px; /* при необходимости */
+  border-image-slice: 2;
+  border-image-repeat: round; /* делает узор повторяющимся */
+}
+.custom-border:hover {
+  border-color: #059146;
+}
