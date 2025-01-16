@@ -1,20 +1,20 @@
 "use client";
 import { createContext, useContext } from "react";
 import { useNewsState } from "@/app/_hooks/useNewsState";
-import { useNotification } from "@/app/_hooks/useNotification";
+// import { useNotification } from "@/app/_hooks/useNotification";
 
 const NewsContext = createContext(null);
 
 export function NewsProvider({ children }) {
   const newsState = useNewsState();
-  const { showSuccess, showError } = useNotification();
+  // const { showSuccess, showError } = useNotification();
 
   const handleCreateNews = async (newsData) => {
     try {
       await newsState.actions.createNews(newsData);
-      showSuccess("News created successfully");
+      // showSuccess("News created successfully");
     } catch (error) {
-      showError(error.message || "Failed to create news");
+      // showError(error.message || "Failed to create news");
     }
   };
 
@@ -22,10 +22,10 @@ export function NewsProvider({ children }) {
     try {
       const success = await newsState.actions.deleteNews(id);
       if (success) {
-        showSuccess("News deleted successfully");
+        // showSuccess("News deleted successfully");
       }
     } catch (error) {
-      showError(error.message || "Failed to delete news");
+      // showError(error.message || "Failed to delete news");
     }
   };
 
@@ -33,12 +33,12 @@ export function NewsProvider({ children }) {
     try {
       const success = await newsState.actions.updateNews(id, newsData);
       if (success) {
-        showSuccess("News updated successfully");
+        // showSuccess("News updated successfully");
         return true;
       }
       return false;
     } catch (error) {
-      showError(error.message || "Failed to update news");
+      // showError(error.message || "Failed to update news");
       return false;
     }
   };
