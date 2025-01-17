@@ -42,11 +42,24 @@ export default function NewsDetailPage({ params }) {
     ) {
       try {
         const success = await deleteNews(news.id);
+        router.push("/");
+
         if (success) {
-          router.push("/news");
+          // Redirect to news list page after successful deletion
+
+          // Optionally show a success message
+          toast.success(
+            locale === "ru" ? "Новость удалена" : "Yangilik o'chirildi"
+          );
         }
       } catch (error) {
         console.error("Error deleting news:", error);
+        // Show error message
+        toast.error(
+          locale === "ru"
+            ? "Ошибка при удалении новости"
+            : "Yangilikni o'chirishda xatolik"
+        );
       }
     }
   };
